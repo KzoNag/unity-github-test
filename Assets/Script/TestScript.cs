@@ -4,8 +4,9 @@ using System.Collections;
 public class TestScript : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+	{
+		Debug.Log("[LOG]TestScript");
 	}
 	
 	// Update is called once per frame
