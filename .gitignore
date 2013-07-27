@@ -4,3 +4,4 @@ Temp
 *.csproj
 *.pidb
 *.userprefs
+.DS_Store
