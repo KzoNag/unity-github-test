@@ -12,6 +12,8 @@ http://npoi.codeplex.com/releases
 【動作説明】
 Editor/Data/CharaData.xlsをインポートしてAssets/Data/CharaData.assetsを生成・更新しています。
 エクセルを編集・保存してUnityのエディタに戻ると自動的にReimportされて変更が反映されます。
+ここに少し詳しく書いています↓
+http://kzonag.blog.fc2.com/blog-entry-45.html
 
 【参考】
 以下の記事を参考にさせて頂きました
@@ -21,3 +23,8 @@ http://terasur.blog.fc2.com/blog-entry-511.html
 ・[Unity]NPOI2.0.1(beta 1)を使ってxlsとxlsxを読み込んでみた
 http://caitsithware.sakura.ne.jp/wordpress/?p=108
 
+・ScriptableObjectでのシリアライズ[Unity]
+http://tasogare66.blog.fc2.com/blog-entry-61.html
+
+・実行時のために最適なデータ構造を作成しよう
+http://www.slideshare.net/pigeon6/ss-15740075
