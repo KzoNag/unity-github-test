@@ -51,18 +51,26 @@ public class ExcelImporter : AssetPostprocessor {
 							IRow row = sheet.GetRow(rowIdx);
 							if(row == null){ continue; }
 							
-							int firstCell = row.FirstCellNum;
+							int cellIdx = row.FirstCellNum;
 							
-							ICell nameCell 	= row.GetCell(firstCell);
-							ICell hpCell 	= row.GetCell(firstCell+1);
+							ICell nameCell 	= row.GetCell(cellIdx++);
+							ICell hpCell 	= row.GetCell(cellIdx++);
+							ICell posxCell	= row.GetCell(cellIdx++);
+							ICell posyCell	= row.GetCell(cellIdx++);
+							ICell poszCell	= row.GetCell(cellIdx++);
 							
 							CharaData charaData = new CharaData();
 							charaData.m_name = nameCell.StringCellValue;
 							charaData.m_hp	= (int)hpCell.NumericCellValue;
+							charaData.m_position = new Vector3((float)posxCell.NumericCellValue, 
+																(float)posyCell.NumericCellValue, 
+																(float)poszCell.NumericCellValue);
 							
 							// Add Data
 							Debug.Log("Add:"+charaData.m_name+","+charaData.m_hp);
 							charaDataSet.Add(charaData);
+							
+							CreateOrUpdateObject(charaData);
 						}
 					}
 
@@ -79,5 +87,23 @@ public class ExcelImporter : AssetPostprocessor {
 			}
 
 		}
+	}
+	
+	static private void CreateOrUpdateObject(CharaData _data)
+	{
+		if(_data == null){ return; }
+		
+		GameObject objRoot = GameObject.Find("ObjRoot");
+		if(objRoot == null){ return; }
+		
+		GameObject objChara = GameObject.Find(_data.m_name);
+		if(objChara == null)
+		{
+			//objChara = new GameObject(_data.m_name); 
+			objChara = GameObject.CreatePrimitive(PrimitiveType.Cube);
+			objChara.name = _data.m_name;
+		}
+		objChara.transform.parent = objRoot.transform;
+		objChara.transform.position = new Vector3(_data.m_position.x, _data.m_position.y, _data.m_position.z);
 	}
 }

@@ -37,6 +37,7 @@ public class CharaDataSet : ScriptableObject
 [System.SerializableAttribute]
 public class CharaData
 {
-	public string m_name = "";
-	public int	  m_hp = 0;
+	public string  m_name = "";
+	public int	   m_hp = 0;
+	public Vector3 m_position = Vector3.zero;
 }
