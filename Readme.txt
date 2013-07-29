@@ -29,6 +29,8 @@ http://tasogare66.blog.fc2.com/blog-entry-61.html
 ・実行時のために最適なデータ構造を作成しよう
 http://www.slideshare.net/pigeon6/ss-15740075
 
+ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
 ●●エクセル(.xls)ファイルのエクスポートテスト●●
 エクセルへの書き出し機能を追加しました。
 エクセルインポート時にデータに応じたオブジェクトがObjRootの子として生成されます。
@@ -36,7 +38,6 @@ Assets/Data/CharaData.assetsを選択した状態でメニューから[Assets/Ex
 ObjRootの子オブジェクトに基づいてCharaData.assetsが更新され、Editor/Data/CharaData.xlsが出力されます。
 ここに少し詳しく書いています↓
 http://kzonag.blog.fc2.com/blog-entry-46.html
-
 
 【参考】
 以下の記事を参考にさせて頂きました
